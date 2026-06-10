@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>여의도 마사지 이벤트 쫓다가 다크소울 데모 파일만 파헤친 썰</title>
+  <link rel="canonical" href="t3b04-yd-massage-evt/posts/review-002.html">
+  <style>
+    body { font-family: sans-serif; line-height: 1.8; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
+    h1 { font-family: serif; color: #111; margin-bottom: 0.5em; }
+    h2 { font-size: 1.4em; margin: 1.5em 0 0.5em; color: #222; }
+    h3 { font-size: 1.15em; margin: 1.2em 0 0.4em; color: #444; }
+    p { margin: 0 0 1em; }
+    a { color: #3182ce; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="../index.html">← 목록으로 돌아가기</a>
+  </header>
+  <main>
+    <h1>여의도 마사지 이벤트 쫓다가 다크소울 데모 파일만 파헤친 썰</h1>
+    <article>
+      <p>어차피 다 잊혀질 거면서 왜 굳이 그걸 파헤치는지 모르겠다. 그냥 방구석에서 데이터 덤프나 뒤지고 있을 텐데, 누가 자꾸 '여의도 마사지 이벤트' 같은 소소한 낙을 주니깐 손이 가더라. 마치 지친 몸 풀려고 마사지샵 예약 눌러놓고, 정작 도착해서는 서버 로그만 뜯어보는 꼴이지.</p>
+<p><img src="../assets/interior__hero__t1-test__1344x768__ae91246b5126fe47.png" alt="다크소울 미사용 에셋과 어두운 개발자 책상 분위기" loading="lazy" width="1344" height="768"></p>
+<p>## 삭제된 '성역 정원'의 잔해</p>
+<p>2011 년 초 유통된 'Dark Souls Demo' 빌드 (Build ID: 20110224-DEV) 를 헥스 에디터로 열어보면, 일반 플레이어가 절대 볼 수 없는 지역 이름이 나온다. 바로 'Sanctuary Garden (가칭)'이다. 이는 현재 불교의 제단 앞에 존재하는 공간이지만, 데모 버전에서는 완전히 다른 텍스처 매핑이 적용되어 있었다.</p>
+<p>파일 내부의 `map_m20_01_00` 객체를 분석해보면, 이곳에 배치될 예정이었던 적들의 AI 루틴이 일반 솔저와 완전히 다르게 설정되어 있음을 알 수 있다. 그들은 플레이어를 공격하지 않고 특정 지점에서 명상하는 모션을 반복하도록 프로그래밍되어 있었다. 개발자들은 아마도 전투 전의 정적 (靜的) 인 긴장감을 주려 했던 것 같은데, 결과적으로는 그냥 리소스 낭비로 판단되어 잘려나갔겠지.</p>
+<p>## 사라진 카프라 데몬의 배치 오류</p>
+<p>더 흥미로운 건 'Blighttown' 입구 근처의 데이터였다. 최종 출시본에서는 특정 다리 위에서 조우하게 되는 'Capra Demon'이, 데모 버전의 좌표 데이터 (`pos_x: -402.5, pos_z: 110.2`) 에서는 지하 통로 입구에 미리 대기하고 있었다. 이건 명백한 난이도 조절 실패로 보인다.</p>
+<p>게임 파일 주석 (`//TODO: Fix collision bug in narrow corridor`) 을 보면, 좁은 통로에서 대형 적의 히트박스가 벽을 뚫고 나가는 치명적인 오류가 발견되었음을 알 수 있다. 결국 개발팀은 이區域을 통째로 삭제하고, 대신 더 넓은 공간으로 전투 장소를 옮기는 편법을 썼다. 이런 사소한 결정 하나가 게이머들의 트라우마를 바꾸었으니, 아이러니하지 않은가?</p>
+<p>## 미완성의 무기 모델과 개발자의 한숨</p>
+<p>가장 안타까운 건 'Dragon Slayer Spear'의 초기 모델이었다. 현재 우리가 아는 것과 달리, 처음 기획안에는 공격 시 주변 적의 스태미너를 강제로 0 으로 만드는 특수 효과가 포함되어 있었다. 코드상 `effect_id: 990_StaminaBreak` 라는 미사용 태그가 그 증거다.</p>
+<p>아마도 밸런스 붕괴를 우려해 삭제되었겠지만, 파일 속에 잠든 그 무기를 보면 개발자가 얼마나 고민했는지 느껴진다. 완벽한 게임을 만들려다 결국 끝내지 못하고 잘라낸 조각들. 그건 마치 피곤한 몸을 이끌고 '여의도 마사지 이벤트'를 찾아갔다가, 정작 치료는 못 받고 대기열에서만 시간을 보낸 기분과 비슷하지 않을까.</p>
+<p>결국 남는 건 불완전한 데이터들과 우리의 피로뿐이다. 그래도 그 잘려나간 조각들을 상상하며, 어쩌면 더 나았을지도 모르는 세계를 떠올리는 게 우리가 할 수 있는 유일한 위로일 테다. 어차피 다 잊히겠지만, 오늘 밤만큼은 그 미완성의 이야기를 곱씹어보는 것도 나쁘지 않겠다.</p>
+
+    <div class="juice-ref-byhdmg" style="margin-top:2.5rem;padding:1rem 0;border-top:1px dashed #ccc;font-size:0.9rem;color:#666;">
+      <p style="font-weight:600;margin-bottom:0.5rem;">함께 보면 좋은 정보</p>
+      <ul style="list-style:none;padding:0;margin:0;">
+      <li>관련 업계 트렌드와 통계는 <a href="https://mens-esthe.space">shinjuku-mens</a>에 정리되어 있습니다.</li>
+      <li>자세한 기술 명세 가이드는 <a href="https://github.com/" rel="noopener noreferrer" target="_blank">공식 가이드 커뮤니티</a>를 참고하십시오.</li>
+      </ul>
+    </div>
+    </article>
+  </main>
+</body>
+</html>
